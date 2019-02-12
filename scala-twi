@@ -5,7 +5,7 @@ import twitter4j.ResponseList
 import twitter4j.QueryResult
 import twitter4j.Query
 import twitter4j.Paging
-
+//life is veryy simple..///
 object Twitter4JWithScala extends App {
 //life is very simple,you have to live///
   val twitter = new TwitterFactory().getInstance()
