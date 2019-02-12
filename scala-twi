@@ -1,0 +1,40 @@
+ import twitter4j.Twitter
+import twitter4j.TwitterFactory
+import twitter4j.auth.AccessToken
+import twitter4j.ResponseList
+import twitter4j.QueryResult
+import twitter4j.Query
+import twitter4j.Paging
+
+object Twitter4JWithScala extends App {
+
+  val twitter = new TwitterFactory().getInstance()
+
+  // Authorising with your Twitter Application credentials
+  twitter.setOAuthConsumer("consumer_key",
+    "consumer_secret")
+  twitter.setOAuthAccessToken(new AccessToken(
+    "access_key",
+    "access_token"))
+
+  // Posting a Tweet
+  twitter.updateStatus("Hello , This is a sample tweet")
+
+  // Capturing the Tweets from your timeline
+  val statuses = twitter.getHomeTimeline
+
+  // Sending direct messages to recipients
+  val message = twitter.sendDirectMessage("twitter_user_id/name", "Hello")
+  println("Sent: " + message.getText + " to @" + message.getRecipientScreenName)
+
+  //Querying the Twitter
+  val query = new Query("Day in Day out Knoldus Software :)");
+  val result = twitter.search(query)
+  println("Tweetes Found :" + result.getTweets.size)
+
+  // Getting Direct Messages & Favorites
+  val directMessages = twitter.getDirectMessages
+  println(" Direct Messages Found : " + directMessages)
+  val favorites = twitter.getFavorites
+  println("Favorites : " + favorites)
+}
