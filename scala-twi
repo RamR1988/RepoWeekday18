@@ -9,7 +9,7 @@ import twitter4j.Paging
 object Twitter4JWithScala extends App {
 
   val twitter = new TwitterFactory().getInstance()
-
+	//just for commiting///
   // Authorising with your Twitter Application credentials
   twitter.setOAuthConsumer("consumer_key",
     "consumer_secret")
