@@ -11,6 +11,7 @@ object Twitter4JWithScala extends App {
   val twitter = new TwitterFactory().getInstance()
 	//just for commiting///
   // Authorising with your Twitter Application credentials
+// hai this is for another commiting...//
   twitter.setOAuthConsumer("consumer_key",
     "consumer_secret")
   twitter.setOAuthAccessToken(new AccessToken(
