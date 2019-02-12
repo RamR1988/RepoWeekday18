@@ -7,7 +7,7 @@ import twitter4j.Query
 import twitter4j.Paging
 
 object Twitter4JWithScala extends App {
-
+//life is very simple,you have to live///
   val twitter = new TwitterFactory().getInstance()
 	//just for commiting///
   // Authorising with your Twitter Application credentials
